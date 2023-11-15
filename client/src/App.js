@@ -12,7 +12,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <div style={{height: '250px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2022/05/0522_pickleball_oneuseonly.jpg')`}}>
+        <h1 style={{paddingTop: 75, paddingRight: 75,textAlign: 'right'}}>Fun With Pickles</h1>
+      </div>
+
+      <h3>{message}</h3>
     </div>
   );
 }
