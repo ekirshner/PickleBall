@@ -5,9 +5,23 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/message")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
+    // fetch("http://localhost:8000/message")
+    //   .then((res) => res.json())
+    //   .then((data) => setMessage(data.message));
+
+      fetch('http://localhost:8000/message', {
+        method: 'post',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ title: 'Fetch POST Request Example' })})
+        .then((res) => {
+          // console.log(res.body)
+          return res.json()
+        }).then(data =>  {
+          setMessage(data.title)
+        })
+   
+
+      
   }, []);
 
   return (
